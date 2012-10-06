@@ -132,6 +132,12 @@ config CPU_FREQ_DEFAULT_GOV_SMARTASS2
         select CPU_FREQ_GOV_SMARTASS2
         help
             Use the CPUFreq governor 'smartassV2' as default.
+
+config CPU_FREQ_DEFAULT_GOV_SAVAGEDZEN
+	bool "savagedzen"
+	select CPU_FREQ_GOV_SAVAGEDZEN
+	help
+	  Use the CPUFreq governor 'savagedzen' as default.
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -228,6 +234,13 @@ config CPU_FREQ_GOV_SMARTASS2
         help
             'smartassV2' - a "smart" governor
             If in doubt, say N.
+
+config CPU_FREQ_GOV_SAVAGEDZEN
+	tristate "'savagedzen' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	   'Savaged-Zen' - a "smartass" based governor
+	   If in doubt, say N.
 
 endif	# CPU_FREQ
 
